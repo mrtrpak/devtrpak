@@ -5,7 +5,7 @@ const axios = require('axios').default,
  PORT = process.env.PORT || 3333,
  app = express();
 
- const { soccerKey } = require('./secret');
+ const { soccerKey } = process.env.soccerKey || require('./secret');
 
 app.use(cors());
 
