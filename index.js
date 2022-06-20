@@ -12,6 +12,10 @@ app.use(cors());
 //serve static files from react app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+app.get('/', (req, res) => {
+  res.send("hello to homepage");
+});
+
 app.get('/soccer',  async (req,res) => {
   try {
     const response = await axios({
@@ -31,5 +35,6 @@ app.get('/soccer',  async (req,res) => {
 //catchall handler for any request that doesn't match above options
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-})
+});
+
 app.listen(PORT, () => console.log(`server live on http://localhost:${PORT}`));
