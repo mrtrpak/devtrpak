@@ -6,7 +6,7 @@ export default function SoccerPage() {
   React.useEffect(() => {
     fetch('/api/soccer')
     .then(res => res.json())
-    .then(standings => setStandings(standings))
+    .then(standings => setStandings({ standings }))
   }, []);
 
   return (
