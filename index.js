@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.send("hello to homepage");
 });
 
-app.get('/api/soccer',  async (req,res) => {
+app.get('/soccer',  async (req,res) => {
   try {
     const response = await axios({
       "url": `https://api.football-data.org/v2/competitions/${leagueCode}/standings`,
