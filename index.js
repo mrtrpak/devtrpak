@@ -6,6 +6,7 @@ const axios = require('axios').default,
  app = express();
 
  const soccerKey = process.env.soccerKey;
+ let leagueCode = "BL1";
  
 app.use(cors());
 
@@ -16,16 +17,15 @@ app.get('/', (req, res) => {
   res.send("hello to homepage");
 });
 
-app.get('/soccer',  async (req,res) => {
+app.get('/api/soccer',  async (req,res) => {
   try {
     const response = await axios({
-      "url": `https://api.football-data.org/v2/competitions/BL1/standings`,
+      "url": `https://api.football-data.org/v2/competitions/${leagueCode}/standings`,
       "headers": {
         "X-Auth-Token": soccerKey,
         "Content-Type": "application/json"
       }
     })
-    console.log(response.data.standings[0].table);
     res.send(response.data.standings[0].table);
   } catch (err) {
     res.send(err);
