@@ -4,7 +4,7 @@ export default function SoccerPage() {
   let [standings, setStandings] = React.useState(null);
 
   React.useEffect(() => {
-    fetch('/soccer')
+    fetch('/api/soccer')
     .then(res => res.json())
     .then(standings => setStandings(standings))
   }, []);
