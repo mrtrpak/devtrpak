@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 
 export default function SoccerPage() {
-  let [standings, setStandings] = React.useState(null);
+  let [standings, setStandings] = useState({ table: {}});
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('/api/soccer')
     .then(res => res.json())
-    .then(standings => setStandings({ standings }))
+    .then(standings => setStandings({ table: standings }))
+    .catch(err => console.log(err));
   }, []);
 
   return (
