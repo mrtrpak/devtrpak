@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react';
 
 export default function SoccerPage() {
-  let [standings, setStandings] = useState({});
+  let [standings, setStandings] = useState(null);
 
   useEffect(() => {
     fetch('/api/soccer')
     .then(res => res.json())
-    .then(standings => setStandings({ standings }))
+    .then(standings => setStandings(standings))
     .catch(err => console.log(err));
   }, []);
 
@@ -15,13 +15,6 @@ export default function SoccerPage() {
   return (
     <div>
       <h1>Here are soccer standings</h1>
-      { standings.map(((team, id) => {
-        return (
-          <div>
-            team[id].team.name
-          </div>
-          ) 
-      })) }
     </div>
   );
 };
