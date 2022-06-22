@@ -5,7 +5,8 @@ const axios = require('axios').default,
  PORT = process.env.PORT || 3333,
  app = express();
 
- const soccerKey = process.env.soccerKey;
+ const { soccerKey } = process.env.soccerKey || require('./secret');
+ 
  let leagueCode = "BL1";
  
 app.use(cors());
@@ -26,7 +27,7 @@ app.get('/api/soccer',  async (req,res) => {
         "Content-Type": "application/json"
       }
     })
-    res.send(response.data.standings[0].table);
+    res.send(response.data.standings[0].table.standings);
   } catch (err) {
     res.send(err);
   };

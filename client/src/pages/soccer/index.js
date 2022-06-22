@@ -1,10 +1,12 @@
 import React from 'react';
 
+import SoccerTable from '../../components/soccer-table';
+
 export default function SoccerPage() {
 
   return (
     <div>
-      <h1>Here are soccer standings</h1>
+      <SoccerTable />
     </div>
   );
 };
