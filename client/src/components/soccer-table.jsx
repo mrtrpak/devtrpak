@@ -3,6 +3,9 @@ import { Table, TableCell, TableContainer, TableHead, TableRow, Paper, TableBody
 
 import { standingsTest } from '../testing';
 
+import './soccer-table.css';
+
+
 export default function SoccerTable() {
   // const [standings, setStandings] = useState();
 
@@ -19,7 +22,7 @@ export default function SoccerTable() {
   return (
     <TableContainer component={Paper} sx={{ overflow: 'hidden'}}>
       <Table stickyHeader aria-label="sticky table">
-        <TableHead>
+        <TableHead className='header'>
           <TableRow>
           {
             tableRows.map(rowName => {
