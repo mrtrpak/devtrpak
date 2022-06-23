@@ -17,17 +17,26 @@ export default function SoccerTable() {
     // .catch(err => console.log(err));
   }, []);
 
-  const tableRows = ["pos", "team", "crest", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
+  // const header = document.getElementById('header');
+  // const sticky = header.offsetTop;
+  // const stickyHeader = () => {
+  //   window.pageYOffset > sticky ? 
+  //     header.classList.add('sticky') : header.classList.remove('sticky');
+  // }
+  // window.onscroll = () => stickyHeader();
+
+
+  const tableRows = ["pos", "crest", "team name", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
 
   return (
     <TableContainer component={Paper} sx={{ overflow: 'hidden'}}>
-      <Table stickyHeader aria-label="sticky table">
-        <TableHead className='header'>
-          <TableRow>
+      <Table aria-label="simple table">
+        <TableHead className='tableHead'>
+          <TableRow className='header'>
           {
             tableRows.map(rowName => {
               return (
-                <TableCell key={rowName} className='table-headers bold'>
+                <TableCell key={rowName}>
                   { rowName.toUpperCase() }
                 </TableCell>
               )
@@ -35,7 +44,7 @@ export default function SoccerTable() {
           }
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody className='tableBody'>
           {
             Object.entries(standingsTest).map((team, idx) => {
               const { name, crestUrl } = team[1].team;
@@ -44,8 +53,8 @@ export default function SoccerTable() {
               return (
                 <TableRow key={idx} className={`${position}-place`}>
                   <TableCell align='center' className='position'>{position}</TableCell>
-                  <TableCell align='center' className='team-name'>{name}</TableCell>
-                  <TableCell align='center' className='image'><img src={crestUrl} alt="team crest"></img></TableCell>
+                  <TableCell><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
+                  <TableCell align='left' className='team-name'>{name}</TableCell>
                   <TableCell align='center' className='points'>{points}</TableCell>
                   <TableCell align='center' className='gp'>{playedGames}</TableCell>
                   <TableCell align='center' className='won'>{won}</TableCell>
