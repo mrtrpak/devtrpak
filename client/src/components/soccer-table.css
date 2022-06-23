@@ -1,13 +1,5 @@
 .tableHead {
-  font-weight: bolder;
   background-color: gold;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-.tableBody {
-  margin-top: 550px;
 }
 
 .image {

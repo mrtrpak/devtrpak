@@ -36,7 +36,7 @@ export default function SoccerTable() {
           {
             tableRows.map(rowName => {
               return (
-                <TableCell key={rowName}>
+                <TableCell align='center' key={rowName}>
                   { rowName.toUpperCase() }
                 </TableCell>
               )
@@ -53,8 +53,8 @@ export default function SoccerTable() {
               return (
                 <TableRow key={idx} className={`${position}-place`}>
                   <TableCell align='center' className='position'>{position}</TableCell>
-                  <TableCell><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
-                  <TableCell align='left' className='team-name'>{name}</TableCell>
+                  <TableCell align='center'><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
+                  <TableCell align='center' className='team-name'>{name}</TableCell>
                   <TableCell align='center' className='points'>{points}</TableCell>
                   <TableCell align='center' className='gp'>{playedGames}</TableCell>
                   <TableCell align='center' className='won'>{won}</TableCell>
