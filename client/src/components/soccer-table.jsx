@@ -26,18 +26,21 @@ export default function SoccerTable() {
   // window.onscroll = () => stickyHeader();
 
 
-  const tableRows = ["pos", "crest", "team name", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
+  const tableRows = ["pos", "crest", "team", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
 
   return (
     <TableContainer component={Paper} sx={{ overflow: 'hidden'}}>
       <Table aria-label="simple table">
         <TableHead className='tableHead'>
-          <TableRow className='header'>
+          <TableRow>
           {
             tableRows.map(rowName => {
               return (
-                <TableCell align='center' key={rowName}>
+                <TableCell align='center' key={rowName} className='headers'>
+                  <span className='header-text'>
+
                   { rowName.toUpperCase() }
+                  </span>
                 </TableCell>
               )
             })
@@ -52,7 +55,7 @@ export default function SoccerTable() {
               
               return (
                 <TableRow key={idx} className={`${position}-place`}>
-                  <TableCell align='center' className='position'>{position}</TableCell>
+                  <TableCell align='center' className='position'><span className='position-text'>{position}</span></TableCell>
                   <TableCell align='center'><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
                   <TableCell align='center' className='team-name'>{name}</TableCell>
                   <TableCell align='center' className='points'>{points}</TableCell>
