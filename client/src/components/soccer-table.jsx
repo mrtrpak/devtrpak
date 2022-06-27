@@ -58,7 +58,7 @@ export default function SoccerTable() {
                   <TableCell align='center' className='position'><span className='position-text'>{position}</span></TableCell>
                   <TableCell align='center'><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
                   <TableCell align='center' className='team-name'>{name}</TableCell>
-                  <TableCell align='center' className='points'>{points}</TableCell>
+                  <TableCell align='center' className='points'><span className='points-text'>{points}</span></TableCell>
                   <TableCell align='center' className='gp'>{playedGames}</TableCell>
                   <TableCell align='center' className='won'>{won}</TableCell>
                   <TableCell align='center' className='draw'>{draw}</TableCell>
