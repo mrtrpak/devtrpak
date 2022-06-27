@@ -11,7 +11,27 @@
                -1px -1.1px 0 gold;
 }
 
-.position-text {
+.place-1, .place-2, .place-3, .place-4 {
+  background-color: limegreen;
+}
+
+.place-5, .place-6 {
+  background-color: lime;
+}
+
+.place-7 {
+  background-color: yellowgreen;
+}
+
+.tableBody tr:nth-last-of-type(3) {
+  background-color: yellow;
+}
+
+.tableBody tr:nth-last-child(-n+2) {
+  background-color: red;
+}
+
+.position-text, .points-text {
   font-size: 24px;
   font-weight: 750;
   color: gold;

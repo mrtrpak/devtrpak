@@ -54,7 +54,7 @@ export default function SoccerTable() {
               const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
               
               return (
-                <TableRow key={idx} className={`${position}-place`}>
+                <TableRow key={idx} className={`place-${position}`}>
                   <TableCell align='center' className='position'><span className='position-text'>{position}</span></TableCell>
                   <TableCell align='center'><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
                   <TableCell align='center' className='team-name'>{name}</TableCell>
