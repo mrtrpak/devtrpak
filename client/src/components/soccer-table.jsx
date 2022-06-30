@@ -19,17 +19,16 @@ export default function SoccerTable() {
   const tableRows = ["pos", "crest", "team", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
 
   return (
-    <TableContainer component={Paper} className='soccer-tableContainer'>
-      <Table aria-label="simple table" className='soccer-table'>
-        <TableHead className='tableHead'>
+    <TableContainer component={Paper}>
+      <Table aria-label="simple table">
+        <TableHead className='soccer-tableHead'>
           <TableRow>
           {
             tableRows.map(rowName => {
               return (
                 <TableCell align='center' key={rowName} className='headers'>
-                  <span className='header-text'>
-
-                  { rowName.toUpperCase() }
+                  <span className='soccer-headerText'>
+                    { rowName.toUpperCase() }
                   </span>
                 </TableCell>
               )
@@ -37,7 +36,7 @@ export default function SoccerTable() {
           }
           </TableRow>
         </TableHead>
-        <TableBody className='tableBody'>
+        <TableBody className='soccer-tableBody'>
           {
             Object.entries(standingsTest).map((team, idx) => {
               const { name, crestUrl } = team[1].team;

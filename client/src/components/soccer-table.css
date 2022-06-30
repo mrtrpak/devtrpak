@@ -23,12 +23,12 @@
   background-color: yellowgreen;
 }
 
-.tableBody tr:nth-last-of-type(3) {
-  background-color: yellow;
+.soccer-tableBody tr:nth-last-of-type(3) {
+  background-color: orange;
 }
 
-.tableBody tr:nth-last-child(-n+2) {
-  background-color: red;
+.soccer-tableBody tr:nth-last-child(-n+2) {
+  background-color: orangered;
 }
 
 .position-text, .points-text {
