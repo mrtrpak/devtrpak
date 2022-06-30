@@ -5,7 +5,6 @@ import { standingsTest } from '../testing';
 
 import './soccer-table.css';
 
-
 export default function SoccerTable() {
   // const [standings, setStandings] = useState();
 
@@ -17,20 +16,11 @@ export default function SoccerTable() {
     // .catch(err => console.log(err));
   }, []);
 
-  // const header = document.getElementById('header');
-  // const sticky = header.offsetTop;
-  // const stickyHeader = () => {
-  //   window.pageYOffset > sticky ? 
-  //     header.classList.add('sticky') : header.classList.remove('sticky');
-  // }
-  // window.onscroll = () => stickyHeader();
-
-
   const tableRows = ["pos", "crest", "team", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
 
   return (
-    <TableContainer component={Paper} sx={{ overflow: 'hidden'}}>
-      <Table aria-label="simple table">
+    <TableContainer component={Paper} className='soccer-tableContainer'>
+      <Table aria-label="simple table" className='soccer-table'>
         <TableHead className='tableHead'>
           <TableRow>
           {
