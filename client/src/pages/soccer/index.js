@@ -1,15 +1,19 @@
 import React from 'react';
-import { Paper } from '@mui/material';
+import { Table, TableContainer, Paper } from '@mui/material';
 
-import SoccerTable from '../../components/soccer-table';
+import SoccerTableHeaders from '../../components/soccer-tableHeaders';
+import SoccerTableBody from '../../components/soccer-tableBody';
 
 import './index.css';
 
 export default function SoccerPage() {
 
   return (
-    <div className='soccerPage'>
-      <SoccerTable component={Paper} />
-    </div>
+    <TableContainer component={Paper} >
+      <Table aria-label="simple table" className='soccerPage'>
+        <SoccerTableHeaders />
+        <SoccerTableBody />
+      </Table>
+    </TableContainer>
   );
 };

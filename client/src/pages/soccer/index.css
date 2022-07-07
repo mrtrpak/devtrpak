@@ -1,9 +1,0 @@
-.soccerPage {
-  margin: auto;
-}
-
-@media screen and (min-width: 1000px) {
-  .soccerPage {
-    width: 90%;
-  }
-}
