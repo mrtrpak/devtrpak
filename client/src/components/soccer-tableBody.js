@@ -24,17 +24,17 @@ export default function SoccerTableBody() {
           
           return (
             <TableRow key={idx} className={`place-${position}`}>
-              <TableCell align='center' className='position'><span className='position-text'>{position}</span></TableCell>
+              <TableCell align='center'><span className='position-text'>{position}</span></TableCell>
               <TableCell align='center'><img src={crestUrl} alt="team crest" className='image'></img></TableCell>
-              <TableCell align='center' className='team-name'>{name}</TableCell>
-              <TableCell align='center' className='points'><span className='points-text'>{points}</span></TableCell>
-              <TableCell align='center' className='gp'>{playedGames}</TableCell>
-              <TableCell align='center' className='won'>{won}</TableCell>
-              <TableCell align='center' className='draw'>{draw}</TableCell>
-              <TableCell align='center' className='lost'>{lost}</TableCell>
-              <TableCell align='center' className='gf'>{goalsFor}</TableCell>
-              <TableCell align='center' className='ga'>{goalsAgainst}</TableCell>
-              <TableCell align='center' className='gd'>{goalDifference}</TableCell>
+              <TableCell align='center'>{name}</TableCell>
+              <TableCell align='center'><span className='points-text'>{points}</span></TableCell>
+              <TableCell align='center'>{playedGames}</TableCell>
+              <TableCell align='center'>{won}</TableCell>
+              <TableCell align='center'>{draw}</TableCell>
+              <TableCell align='center'>{lost}</TableCell>
+              <TableCell align='center'>{goalsFor}</TableCell>
+              <TableCell align='center'>{goalsAgainst}</TableCell>
+              <TableCell align='center'>{goalDifference}</TableCell>
             </TableRow>
           )
         })
