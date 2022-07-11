@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { TableBody, TableRow, TableCell } from '@mui/material';
 
-import { standingsTest } from '../testing';
+// import { standingsTest } from '../testing';
 
 import './soccer-tableBody.css';
 
 export default function SoccerTableBody() {
-  // const [standings, setStandings] = useState();
+  const [standings, setStandings] = useState();
+
+  
 
   useEffect(() => {
-    // fetch('/api/soccer')
-    // .then(res => res.json())
-    // .then(standings => setStandings(standings))
-    // .catch(err => console.log(err));
+    fetch('/api/soccer')
+    .then(res => res.json())
+    .then(standings => setStandings(standings))
+    .catch(err => console.log(err));
+    
   }, []);
 
   return (
     <TableBody className='soccer-tableBody'>
       {
-        Object.entries(standingsTest).map((team, idx) => {
+        Object.entries(standings).map((team, idx) => {
           const { name, crestUrl } = team[1].team;
           const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
           
