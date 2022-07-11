@@ -7,7 +7,7 @@ export default function SoccerTableHeaders() {
   const tableRows = ["pos", "crest", "team", "pts", "gp", "won", "draw", "lost", "gf", "ga", "gd"];
 
   return (
-    <TableHead className='soccer-tableHead'>
+    <TableHead className='soccer-tableHead sticky-inner'>
       <TableRow>
         {
           tableRows.map(rowName => {
