@@ -7,6 +7,7 @@ import './soccer-tableBody.css';
 
 export default function SoccerTableBody() {
   const [standings, setStandings] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchStandings = async () => {
@@ -14,13 +15,14 @@ export default function SoccerTableBody() {
       const data = await response.json();
       
       setStandings(data);
+      setIsLoading(false);
       
     };
     
     fetchStandings();
   }, []);
 
-  if (standings) {
+  if (!isLoading) {
     return (
       <TableBody className='soccer-tableBody'>
         { 
@@ -47,5 +49,7 @@ export default function SoccerTableBody() {
         }
       </TableBody>
     );
-  } else return null; 
+  } else return (
+    <TableBody></TableBody>
+  ); 
 };
