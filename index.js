@@ -5,7 +5,6 @@ const axios = require('axios').default,
  PORT = process.env.PORT || 3333,
  app = express();
 
-//  const { soccerKey } = process.env.soccerKey || require('./secret');
 const soccerKey = process.env.soccerKey;
 const { soccerKeyDevelopment } = require('./secret');
  
@@ -14,7 +13,7 @@ const { soccerKeyDevelopment } = require('./secret');
 app.use(cors());
 
 //serve static files from react app
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/', (req, res) => {
   res.send("hello from root route");
@@ -37,7 +36,7 @@ app.get('/api/soccer',  async (req,res) => {
 
 //catchall handler for any request that doesn't match above options
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 app.listen(PORT, () => console.log(`server live on http://localhost:${PORT}`));
