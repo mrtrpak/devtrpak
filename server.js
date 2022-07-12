@@ -13,7 +13,7 @@ const { soccerKeyDevelopment } = require('./secret');
 app.use(cors());
 
 //serve static files from react app
-app.use(express.static(path.resolve(__dirname, './client/build')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 app.get('/', (req, res) => {
   res.send("hello from root route");
