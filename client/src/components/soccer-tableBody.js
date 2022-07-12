@@ -7,11 +7,9 @@ import './soccer-tableBody.css';
 
 export default function SoccerTableBody({standings}) {
 
-  console.log(standings);
-  
   return (
     <TableBody className='soccer-tableBody'>
-      {/* { !standings ? 'Loading...' :
+      { !standings ? <TableRow></TableRow> :
         Object.entries(standings).map((team, idx) => {
           const { name, crestUrl } = team[1].team;
           const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
@@ -32,7 +30,7 @@ export default function SoccerTableBody({standings}) {
             </TableRow>
           )
         })
-      } */}
+      }
     </TableBody>
   );
 };
