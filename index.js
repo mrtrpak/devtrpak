@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/', (req, res) => {
-  res.send("hello to homepage");
+  res.send("hello from root route");
 });
 
 app.get('/api/soccer',  async (req,res) => {
@@ -27,7 +27,7 @@ app.get('/api/soccer',  async (req,res) => {
         "Content-Type": "application/json"
       }
     })
-    res.send(response.data.standings[0].table.standings);
+    res.send(response.data.standings[0].table);
   } catch (err) {
     res.send(err);
   };
