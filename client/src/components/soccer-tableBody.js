@@ -22,10 +22,15 @@ export default function SoccerTableBody() {
     fetchStandings();
   }, []);
 
+  console.log(standings, isLoading, "log")
+
   if (!isLoading) {
     return (
       <TableBody className='soccer-tableBody'>
-        { 
+        <TableRow>
+          <TableCell>is loading</TableCell>
+        </TableRow>
+        {/* { 
           Object.entries(standings).map((team, idx) => {
             const { name, crestUrl } = team[1].team;
             const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
@@ -46,10 +51,14 @@ export default function SoccerTableBody() {
               </TableRow>
             )
           })
-        }
+        } */}
       </TableBody>
     );
   } else return (
-    <TableBody></TableBody>
+    <TableBody>
+      <TableRow>
+        <TableCell>not loading</TableCell>
+      </TableRow>
+    </TableBody>
   ); 
 };
